@@ -1,0 +1,3 @@
+.Mega_Menu {
+  @apply hidden bg-white absolute z-10 top-full left-0 w-full max-h-[450px] overflow-x-hidden overflow-y-auto;
+}

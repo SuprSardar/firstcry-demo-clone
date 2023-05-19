@@ -1,0 +1,7 @@
+/* .PremiumBoutiques {
+  @apply bg-gray-100;
+} */
+
+.PremiumBoutiques .Boutique_Card {
+  @apply bg-white rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all;
+}

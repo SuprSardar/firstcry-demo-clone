@@ -1,0 +1,7 @@
+.Login .Login_Form {
+  @apply w-[350px] mx-auto p-5 space-y-5;
+}
+
+.Login a {
+  @apply text-blue-500;
+}

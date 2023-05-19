@@ -1,0 +1,11 @@
+.Header {
+  @apply bg-white sticky top-0 z-20;
+}
+
+.Header .Top {
+  @apply py-4;
+}
+
+.Header .Bottom {
+  @apply bg-[#ffd91c];
+}

@@ -1,0 +1,12 @@
+.Footer {
+  @apply bg-[#d9f3f4] pt-10 pb-20 space-y-10;
+}
+
+.Footer .Top {
+}
+
+.Footer .Middle {
+}
+
+.Footer .Bottom {
+}

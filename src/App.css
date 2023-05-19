@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-size: 20px;
+  --swiper-theme-color: #000000;
+  @apply !h-10 !w-10 bg-white rounded-full text-base shadow-md;
+}
+
+@layer base {
+  * {
+    @apply dark:border-zinc-700/80 outline-none;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: RobotoLR, Arial, sans-serif;
+    @apply font-normal text-[#212121] text-sm;
+  }
+
+  body:has([data-designer-background]) {
+    background-image: url(./assets/images/main-bg.jpg);
+    background-repeat: repeat;
+  }
+
+  body[scroll-lock] {
+    @apply overflow-hidden;
+  }
+
+  body[select-lock] * {
+    @apply select-none;
+  }
+
+  svg {
+    @apply h-5 w-5 fill-current;
+  }
+
+  img {
+    @apply h-full w-full object-contain;
+  }
+
+  table tr > * {
+    @apply p-3 max-w-xs whitespace-nowrap;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-family: RobotoMB, Arial, sans-serif;
+  }
+
+  :is(select, .select) {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-size: 1.5em;
+
+    @apply pr-10 bg-transparent bg-no-repeat appearance-none cursor-pointer truncate text-left;
+  }
+
+  :is(input:not(input[type="checkbox"], input[type="button"], input[type="range"]), textarea) {
+    @apply bg-transparent w-full outline-none focus:border-blue-500;
+  }
+
+  input[type="file"] {
+    @apply file:mr-4 file:py-3 file:px-4 file:border-0 file:font-medium file:text-gray-600;
+  }
+
+  textarea.input {
+    @apply border-none resize-none;
+  }
+
+  .App {
+    @apply dark:bg-black dark:text-white transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .button {
+    @apply py-2 px-5 text-sm rounded truncate font-medium border border-transparent;
+  }
+  .button:disabled {
+    @apply bg-gray-200 text-black;
+  }
+
+  .select {
+    @apply pl-2 py-2 rounded;
+  }
+
+  .input {
+    @apply px-3 py-2 border rounded-md;
+  }
+
+  .checkbox {
+    @apply h-5 w-5 rounded-md border appearance-none checked:border-black checked:border-[10px] transition-all relative cursor-pointer checked:after:top-[-10px] checked:after:left-[-10px] checked:after:opacity-100;
+  }
+  .checkbox::after {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L6.5 9.086l4.293-4.293a1 1 0 0 1 1.414 0z'/%3E%3C/svg%3E");
+    @apply content-[''] absolute h-5 w-5 top-0 left-0 transition-all opacity-0;
+  }
+
+  .switch {
+    @apply relative h-8 w-14;
+  }
+  .switch input {
+    @apply hidden [&+div]:checked:bg-blue-500 before:[&+div]:checked:translate-x-6;
+  }
+  .switch div {
+    @apply absolute inset-0 cursor-pointer border rounded-full duration-300 before:absolute before:h-5 before:w-5 before:left-[6px] before:bottom-[5px] before:bg-white before:border-[#6b7280] before:border before:rounded-full before:duration-300;
+  }
+
+  .badge {
+    @apply w-fit px-2.5 rounded-full font-medium;
+  }
+
+  .range {
+    @apply h-4 w-full cursor-pointer appearance-none overflow-hidden bg-transparent rounded-full;
+  }
+  .range::-webkit-slider-runnable-track {
+    @apply h-1.5 w-full rounded-full bg-gray-200;
+  }
+  .range::-moz-range-track {
+    @apply h-1.5 w-full rounded-full bg-gray-200;
+  }
+  .range::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px #6b7280 inset, 0 0 0 2rem #fff inset, calc(100rem * -1 - 0.6rem) 0 0 100rem;
+    @apply bg-gray-500 relative h-4 w-4 border-none rounded-full appearance-none top-1/2 -translate-y-1/2 text-gray-500;
+  }
+  .range::-moz-range-thumb {
+    box-shadow: 0 0 0 3px #6b7280 inset, 0 0 0 2rem #fff inset, calc(100rem * -1 - 0.6rem) 0 0 100rem;
+    @apply bg-gray-500 relative h-4 w-4 border-none rounded-full appearance-none top-1/2 -translate-y-1/2 text-gray-500;
+  }
+}
+
+@layer utilities {
+  .robotomb {
+    font-family: RobotoMB;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-color: transparent transparent;
+    scrollbar-width: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,11 @@
+@font-face {
+  font-family: RobotoLR;
+  src: url(../fonts/Roboto400.woff2) format("woff2"), url(../fonts/Roboto400.woff) format("woff");
+  font-display: block;
+}
+
+@font-face {
+  font-family: RobotoMB;
+  src: url(../fonts/Roboto500.woff2) format("woff2"), url(../fonts/Roboto500.woff) format("woff");
+  font-display: block;
+}
